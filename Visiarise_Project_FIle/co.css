@@ -1,0 +1,353 @@
+/* General Body Styling */
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Navigation and Header Styling */
+header {
+  background-color: rgb(39, 38, 38); /* Navbar background white for laptop view */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; /* Adjust padding */
+  color: white; /* Text color black for laptop view */
+}
+
+.logo {
+  width: 7rem;
+  height: 7rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  color: white;
+  transition: color 0.2s ease-in, transform 0.3s ease-in; /* Add transform to transition */
+}
+
+nav ul li:hover {
+  color: skyblue;
+  transform: scale(1.2);
+}
+
+nav ul li a {
+  text-decoration: none; /* Removes underline */
+  color: white; /* Sets text color to black */
+  font-size: 1.2rem; /* Adjusts the font size */
+  padding: 10px 15px; /* Adds padding for better spacing */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth zoom effect */
+}
+
+nav ul li a:hover {
+  transform: scale(1.1); /* Zooms in the text */
+}
+
+nav ul li.active a {
+  color: green; /* Changes text color to green when active */
+}
+
+/* Responsive Styling for Laptop View */
+@media screen and (max-width: 1024px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .Cart_Slidebar {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.Cart_Slidebar {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(39, 38, 38); /* Cart background white */
+  color: white; /* Cart text color black */
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Cart_Slidebar {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Side Navigation (Cart) Styling */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+ 
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+#place-button {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 35px;
+  display: none;
+}
+
+
+
+/* Responsive Styling for Mobile View */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .logo {
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 5rem; /* Adjust logo size */
+    height: 5rem;
+  }
+
+  .Cart_Slidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white; /* Cart background white */
+    color: white; /* Cart text color black */
+    padding: 10px;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(39, 38, 38); /* Black background for nav items */
+    padding: 0.5rem 0; /* Add padding */
+    margin: 0;
+  }
+
+  nav ul li a {
+    color: white; /* White text for nav items */
+    font-size: 1rem; /* Adjust font size */
+    padding: 10px;
+  }
+
+  nav ul li a:hover {
+    color: green; /* Color change on hover */
+  }
+}
+
+/* Contact Page Styling */
+#contact-page {
+  background-color: #111;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+#contact-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#contact-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.contact-info .info-item {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.contact-info .info-item h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.contact-form {
+  margin-bottom: 30px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 12px 25px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.map iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .contact-info .info-item {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    max-width: 100%;
+  }
+
+  .map iframe {
+    height: 300px;
+  }
+
+
+
+  
+
+  }
+  /*footerm*/
+
+#footer {
+    background-color: rgb(38, 38, 39);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-left .company-logo {
+    max-height: 50px; /* Adjust as needed */
+    width:70px;
+    background-color: #f9f8fb;
+  }
+  .footer-right{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .footer-right .social-logo {
+    width: 50px; /* Adjust size as needed */
+    margin-left: 15px; /* Spacing between icons */
+  }
+  
+  .footer-right a {
+  
+    text-decoration: none;
+  }
+  
+  .footer-right a:hover .social-logo {
+    opacity: 0.7; /* Slightly fade out on hover */
+  }
+  
+  .copyright {
+    margin-top: 10px;
+  }
+  
+  
+  
+  
+  

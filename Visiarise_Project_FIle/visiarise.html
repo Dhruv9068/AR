@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>VisiArise</title>
+    <link rel="stylesheet" href="main.css">
+	<script src="new.js"></script>
+</head>
+<body>
+
+	<header>
+        <!-- Desktop Navbar -->
+        <nav class="MainNav">
+            <img class="logo" src="Image/logo.png" alt="Logo">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="Cart_Slidebar" onclick="openNav()">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </div>
+        </nav>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+
+        <!-- Links for AR objects -->
+        <a class="ar-object" id="1" href="#">item_1</a>
+        <a class="ar-object" id="2" href="#">item_2</a>
+        <a class="ar-object" id="3" href="#">item_3</a>
+        <a class="ar-object" id="4" href="#">item_4</a>
+        <a class="ar-object" id="5" href="#">item_5</a>
+        <a class="ar-object" id="6" href="#">item_6</a>
+        <a class="ar-object" id="7" href="#">item_7</a>
+        <a class="ar-object" id="8" href="#">item_8</a>
+        
+        <div id="container" style="position: fixed;"></div>
+          
+        <span style="font-size:30px;cursor:pointer;position: absolute;" onclick="openNav()"></span>
+    
+        <button type="button" id="place-button">PLACE</button>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Image/Welcome To VisiArise.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="about-visiarise">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-div">
+                    <h3>What is VisiArise?</h3>
+                    <p>
+                        VisiARise is a cutting-edge platform that brings Augmented Reality (AR) to your home decor shopping experience. Our technology allows you to visualize how furniture, artwork, and other home products will look in your space before making a purchase. With VisiARise, you can easily experiment with different styles and arrangements to find the perfect fit for your home.
+                    </p>
+                    <p>
+                        Transform Your Home With Us !
+                    </p>
+                </div>
+                <div class="image-div">
+                    <img src="Image/AI.jpg" alt="Person using AR technology">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-mission">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-div-mission">
+                    <img src="Image/AI2.jpg" alt="Image representing our mission">
+                </div>
+                <div class="text-div-mission">
+                    <h3>Our Mission</h3>
+                    <p>
+                        Our mission is to revolutionize the way you shop for home decor by leveraging the power of Augmented Reality. We aim to provide a seamless and immersive experience that allows you to visualize and interact with furniture and artwork in your own space, helping you make informed decisions and create a home that truly reflects your personal style. By combining technology with creativity, we strive to make interior design accessible, engaging, and enjoyable for everyone.
+                    </p>
+                    <p>
+                        Experience the future of shopping today!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section id="contact-section">
+		<div class="container">
+			<h2>Contact Us</h2>
+			<p>Have any questions or need assistance? Feel free to reach out to us!</p>
+			<a href="contact.html" class="contact-button">Get in Touch</a>
+		</div>
+	</section>
+	<footer id="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="Image/logo.png" alt="Company Logo" class="company-logo">
+            </div>
+            <div class="footer-right">
+                <a href="https://www.linkedin.com/company/dhruvinsights/" target="_blank">
+                    <img src="Image/linkedin-removebg-preview.png" alt="LinkedIn" class="social-logo">
+                </a>
+                <a href="https://www.youtube.com/@VisiArise" target="_blank">
+                    <img src="Image/ytlogo-removebg-preview.png" alt="YouTube" class="social-logo">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Your Company. All rights reserved.
+        </div>
+    </footer>
+
+	<script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // Script to filter and display items based on cart data
+        const filterCartItems = () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartProductIds = cart.map(item => item.product_id.toString()); // Ensure IDs are strings
+
+            document.querySelectorAll('.ar-object').forEach(link => {
+                if (cartProductIds.includes(link.id)) {
+                    link.style.display = 'inline'; // Show the item
+                } else {
+                    link.style.display = 'none'; // Hide the item
+                }
+            });
+
+            if (cartProductIds.length === 0) {
+                const message = document.createElement('p');
+                message.textContent = 'No items in the cart.';
+                document.body.appendChild(message);
+            }
+        };
+
+        // Call the function to filter items on page load
+        filterCartItems();
+    </script>
+</body>
+</html>

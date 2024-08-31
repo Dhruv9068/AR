@@ -1,0 +1,330 @@
+/* General Body Styling */
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Navigation and Header Styling */
+header {
+  background-color: rgb(39, 38, 38); /* Navbar background white for laptop view */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; /* Adjust padding */
+  color: white; /* Text color black for laptop view */
+}
+
+.logo {
+  width: 7rem;
+  height: 7rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  color: white;
+  transition: color 0.2s ease-in, transform 0.3s ease-in; /* Add transform to transition */
+}
+
+nav ul li:hover {
+  color: skyblue;
+  transform: scale(1.2);
+}
+
+nav ul li a {
+  text-decoration: none; /* Removes underline */
+  color: white; /* Sets text color to black */
+  font-size: 1.2rem; /* Adjusts the font size */
+  padding: 10px 15px; /* Adds padding for better spacing */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth zoom effect */
+}
+
+nav ul li a:hover {
+  transform: scale(1.1); /* Zooms in the text */
+}
+
+nav ul li.active a {
+  color: green; /* Changes text color to green when active */
+}
+
+/* Responsive Styling for Laptop View */
+@media screen and (max-width: 1024px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .Cart_Slidebar {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.Cart_Slidebar {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(39, 38, 38); /* Cart background white */
+  color: white; /* Cart text color black */
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Cart_Slidebar {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Side Navigation (Cart) Styling */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+ 
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+#place-button {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 35px;
+  display: none;
+}
+
+
+
+/* Responsive Styling for Mobile View */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .logo {
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 5rem; /* Adjust logo size */
+    height: 5rem;
+  }
+
+  .Cart_Slidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white; /* Cart background white */
+    color: white; /* Cart text color black */
+    padding: 10px;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(39, 38, 38); /* Black background for nav items */
+    padding: 0.5rem 0; /* Add padding */
+    margin: 0;
+  }
+
+  nav ul li a {
+    color: white; /* White text for nav items */
+    font-size: 1rem; /* Adjust font size */
+    padding: 10px;
+  }
+
+  nav ul li a:hover {
+    color: green; /* Color change on hover */
+  }
+}
+
+
+/* Common Styles for About VisiArise and Our Mission Sections */
+section {
+  background-color: rgb(39, 38, 38);
+  padding: 50px 50px;
+}
+
+section .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section .section-content {
+  display: flex;
+  align-items: center;
+  
+  gap: 2rem;
+}
+
+/* Text Styling */
+section .text-div,
+section .text-div-mission {
+  flex: 1;
+}
+
+section .text-div h3,
+section .text-div-mission h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: left;
+}
+
+section .text-div p,
+section .text-div-mission p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  text-align: left;
+}
+
+/* Image Styling */
+section .image-div,
+section .image-div-mission {
+  flex: 1;
+  text-align: center;
+}
+
+section .image-div img,
+section .image-div-mission img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments for mobile devices */
+@media screen and (max-width: 768px) {
+  section .section-content {
+      flex-direction: column;
+  }
+  section {
+    background-color: rgb(39, 38, 38);
+    padding: 10px 50px;
+  }
+  .about-visiarise .text-div {
+      order: 1; /* Text on top */
+  }
+
+  .about-visiarise .image-div {
+      order: 2; /* Image below */
+  }
+
+  .our-mission .image-div-mission {
+      order: 1; /* Image on top */
+  }
+
+  .our-mission .text-div-mission {
+      order: 2; /* Text below */
+  }
+}
+
+
+
+
+
+/*footerm*/
+
+#footer {
+  background-color: rgb(38, 38, 39);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left .company-logo {
+  max-height: 50px; /* Adjust as needed */
+  width:70px;
+  background-color: #f9f8fb;
+}
+.footer-right{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.footer-right .social-logo {
+  width: 50px; /* Adjust size as needed */
+  margin-left: 15px; /* Spacing between icons */
+}
+
+.footer-right a {
+
+  text-decoration: none;
+}
+
+.footer-right a:hover .social-logo {
+  opacity: 0.7; /* Slightly fade out on hover */
+}
+
+.copyright {
+  margin-top: 10px;
+}
+
+
+
+
